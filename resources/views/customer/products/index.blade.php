@@ -41,7 +41,17 @@
                     </a>
 
                     <div class="p-4">
-                        <div class="text-xs text-gray-500 mb-1">{{ $product->category->name ?? 'Umum' }}</div>
+                       
+                        @if($product->category)
+                            <span>{{ $product->category->name }}</span>
+                        @endif
+                        @if($product->brand && $product->category)
+                            <span class="mx-1">•</span>
+                        @endif
+                        @if($product->brand)
+                            <span class="font-semibold">{{ $product->brand->name }}</span>
+                        @endif
+                    
                         
                         <h3 class="text-lg font-bold text-gray-900 truncate">
                             <a href="{{ route('products.show', $product->id) }}" class="hover:text-indigo-600 transition">

@@ -21,8 +21,8 @@
             {{-- Header Produk --}}
             <div class="mb-6">
                 <h1 class="text-3xl font-bold text-gray-900">{{ $product->name }}</h1>
-                <p class="text-gray-500 mt-1">Kategori: {{ $product->category->name ?? 'Uncategorized' }}</p>
-
+               <h3 class="text-lg font-bold text-gray-900 truncate">  <p class="text-gray-500 mt-1">Kategori: {{ $product->category->name ?? 'Uncategorized' }}</p></h3>
+                 <h3 class="text-lg font-bold text-gray-900 truncate"> <p class="text-gray-500 mt-1">Brand: {{ $product->brand->name ?? 'Uncategorized' }}</p></h3>
                 <div class="flex items-center mt-2">
                     <div class="flex text-yellow-400">
                         @php $avgRating = $product->reviews->avg('rating') ?? 0; @endphp
@@ -90,8 +90,11 @@
                         @endif
                     </div>
 
+                    
+
                     <div class="md:w-1/2 p-8">
                         <div class="prose max-w-none text-gray-700">
+                            <h3 class="text-lg font-bold text-gray-900 truncate"> <p>Deskripsi Produk<p></h3>
                             <p>{{ $product->description }}</p>
                         </div>
                     </div>
